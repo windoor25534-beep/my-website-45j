@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYWAY // WORLD CLASS DESIGN</title>
+    <title>MYWAY.com</title>
     <style>
         * {
             box-sizing: border-box;
@@ -31,7 +31,7 @@
             top: 0;
             left: 0;
             z-index: -1;
-            background: radial-gradient(circle at 50% 50%, rgba(30, 5, 8, 0.6) 0%, rgba(2, 2, 2, 0.95) 70%);
+            background: radial-gradient(circle at 50% 50%, rgba(30, 5, 8, 0.7) 0%, rgba(2, 2, 2, 0.98) 70%);
         }
 
         .spotlight {
@@ -39,18 +39,18 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 320px;
-            height: 320px;
-            background: rgba(255, 20, 40, 0.12);
-            filter: blur(90px);
+            width: 350px;
+            height: 350px;
+            background: rgba(255, 20, 40, 0.15);
+            filter: blur(100px);
             border-radius: 50%;
             z-index: -1;
             animation: pulseGlow 4s ease-in-out infinite alternate;
         }
 
         @keyframes pulseGlow {
-            0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.5; }
-            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.9; }
+            0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.4; }
+            100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.8; }
         }
 
         header {
@@ -104,21 +104,22 @@
             justify-content: center;
             text-align: center;
             padding: 0 20px;
-            margin-top: -40px;
+            margin-top: -30px;
         }
 
-        .logo-wrapper {
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        .main-logo {
-            max-width: 280px;
-            width: 80vw;
-            height: auto;
-            object-fit: contain;
-            filter: drop-shadow(0 0 25px rgba(255, 30, 60, 0.5)) drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
-            animation: logoFloat 5s ease-in-out infinite alternate;
+        /* โลโก้ตัวหนังสือสไตล์โกธิคดุดันแบบลอยตัวพรีเมียม */
+        .gothic-logo-text {
+            font-size: clamp(3.5rem, 12vw, 6rem);
+            font-weight: 900;
+            letter-spacing: 4px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.6), 
+                         0 0 50px rgba(255, 30, 60, 0.5),
+                         0 0 100px rgba(255, 30, 60, 0.3);
+            animation: logoFloat 4s ease-in-out infinite alternate;
+            margin-bottom: 5px;
         }
 
         @keyframes logoFloat {
@@ -129,10 +130,10 @@
         .hero-subtitle {
             color: #9c7b82;
             font-size: 0.7rem;
-            letter-spacing: 5px;
+            letter-spacing: 6px;
             text-transform: uppercase;
-            margin-top: 10px;
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            margin-top: 5px;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
         }
 
         .footer-action {
@@ -147,7 +148,7 @@
             background: linear-gradient(135deg, #ff1e3c, #b3001b);
             color: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 14px 38px;
+            padding: 14px 42px;
             border-radius: 16px;
             font-size: 0.85rem;
             font-weight: 900;
@@ -180,10 +181,8 @@
     </header>
 
     <div class="hero-container">
-        <div class="logo-wrapper">
-            <!-- เปลี่ยนตรงนี้ให้ตรงกับชื่อไฟล์รูปของคุณ เช่น logo.png หรือถ้าไฟล์ชื่ออื่นให้แก้ตรงคำว่า logo.png ครับ -->
-            <img src="logo.png" alt="MYWAY Logo" class="main-logo" onerror="this.src='https://via.placeholder.com/280x100/020202/ff1e3c?text=MYWAY';">
-        </div>
+        <!-- ใช้ฟอนต์และเอฟเฟกต์เรืองแสงระดับโลกทดแทนรูปภาพที่หลุด -->
+        <div class="gothic-logo-text">MYWAY</div>
         <div class="hero-subtitle">THE OFFICIAL SUPREMACY</div>
     </div>
 
