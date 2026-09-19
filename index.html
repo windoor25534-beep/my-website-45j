@@ -21,7 +21,7 @@
             position: relative;
         }
 
-        /* แสงออร่าพื้นหลัง */
+        /* แสงออร่าพื้นหลังแบบไดนามิก */
         .ambient-glow {
             position: absolute;
             width: 100%;
@@ -29,7 +29,7 @@
             top: 0;
             left: 0;
             z-index: -1;
-            background: radial-gradient(circle at 50% 50%, rgba(30, 5, 8, 0.7) 0%, rgba(2, 2, 2, 0.98) 70%);
+            background: radial-gradient(circle at 50% 50%, rgba(35, 4, 10, 0.8) 0%, rgba(1, 1, 1, 0.99) 75%);
         }
 
         .spotlight {
@@ -37,21 +37,21 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 350px;
-            height: 350px;
-            background: rgba(255, 20, 40, 0.15);
-            filter: blur(90px);
+            width: 380px;
+            height: 380px;
+            background: rgba(255, 10, 30, 0.18);
+            filter: blur(100px);
             border-radius: 50%;
             z-index: -1;
-            animation: pulseGlow 4s ease-in-out infinite alternate;
+            animation: pulseGlow 5s ease-in-out infinite alternate;
         }
 
         @keyframes pulseGlow {
-            0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.4; }
-            100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.8; }
+            0% { transform: translate(-50%, -50%) scale(0.85); opacity: 0.3; }
+            100% { transform: translate(-50%, -50%) scale(1.4); opacity: 0.85; }
         }
 
-        /* ส่วนหัวเว็บไซต์ (ให้อยู่มุมบนสุดแบบอิสระ) */
+        /* ส่วนหัวเว็บไซต์ */
         header {
             position: absolute;
             top: 0;
@@ -66,26 +66,33 @@
 
         .header-title {
             font-size: 0.8rem;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             color: #ff1e3c;
-            font-weight: 800;
-            text-shadow: 0 0 10px rgba(255, 30, 60, 0.6);
+            font-weight: 900;
+            text-shadow: 0 0 12px rgba(255, 30, 60, 0.8);
         }
 
         .nav-btn {
-            background: rgba(15, 10, 12, 0.8);
-            border: 1px solid rgba(255, 30, 60, 0.35);
-            color: #ffd1d6;
+            background: rgba(20, 10, 15, 0.6);
+            border: 1px solid rgba(255, 30, 60, 0.4);
+            color: #ffe6eb;
             padding: 6px 14px;
             border-radius: 10px;
             font-size: 0.65rem;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-decoration: none;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
         }
 
-        /* บล็อกกลางหน้าจอแบบเป๊ะๆ 100% ไม่โดนบาร์มือถือดัน */
+        .nav-btn:hover {
+            background: rgba(255, 30, 60, 0.25);
+            border-color: #ff738a;
+            box-shadow: 0 0 15px rgba(255, 30, 60, 0.5);
+        }
+
+        /* บล็อกกลางหน้าจอ */
         .center-wrapper {
             position: absolute;
             top: 52%;
@@ -101,19 +108,20 @@
 
         /* โลโก้ */
         .hero-container {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             width: 100%;
         }
 
         .gothic-logo-text {
             font-size: clamp(3.5rem, 12vw, 5.5rem);
             font-weight: 900;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             color: #ffffff;
             text-transform: uppercase;
             font-family: 'Impact', 'Arial Black', sans-serif;
-            text-shadow: 0 0 25px rgba(255, 255, 255, 0.6), 
-                         0 0 50px rgba(255, 30, 60, 0.5);
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.7), 
+                         0 0 50px rgba(255, 30, 60, 0.6),
+                         0 0 90px rgba(255, 30, 60, 0.4);
             animation: logoFloat 4s ease-in-out infinite alternate;
             margin-bottom: 4px;
         }
@@ -124,14 +132,14 @@
         }
 
         .hero-subtitle {
-            color: #9c7b82;
+            color: #a8828b;
             font-size: 0.65rem;
             letter-spacing: 6px;
             text-transform: uppercase;
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
         }
 
-        /* ปุ่มกดเอฟเฟกต์หล่นลงมาจากด้านบนเข้าสู่กลางจอ */
+        /* ปุ่มกดระดับไฮเทคพร้อมอนิเมชันหล่นลงมา */
         .center-action {
             width: 100%;
             display: flex;
@@ -141,7 +149,7 @@
 
         @keyframes dropDownBtn {
             0% {
-                transform: translateY(-90px);
+                transform: translateY(-100px);
                 opacity: 0;
             }
             100% {
@@ -152,53 +160,60 @@
 
         .enter-btn {
             position: relative;
-            background: linear-gradient(135deg, #ff1e3c 0%, #8a0014 100%);
+            background: linear-gradient(135deg, rgba(255, 30, 60, 0.15) 0%, rgba(138, 0, 20, 0.4) 100%);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            border: 1.5px solid rgba(255, 60, 90, 0.6);
             padding: 16px 48px;
-            border-radius: 16px;
+            border-radius: 18px;
             font-size: 0.85rem;
             font-weight: 900;
             letter-spacing: 4px;
             text-decoration: none;
             overflow: hidden;
             display: inline-block;
-            box-shadow: 0 10px 30px rgba(255, 30, 60, 0.6), 
-                        inset 0 2px 6px rgba(255, 255, 255, 0.4);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: btnPulse 2.5s infinite 1.2s;
+            box-shadow: 0 10px 35px rgba(255, 30, 60, 0.4), 
+                        inset 0 0 15px rgba(255, 30, 60, 0.3);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            animation: cyberPulse 3s infinite 1.2s;
         }
 
+        /* แสงเลเซอร์วิ่งผ่านปุ่ม (Laser Sweep) */
         .enter-btn::before {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
-            width: 100%;
+            left: -150%;
+            width: 150%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: 0.5s;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transform: skewX(-20deg);
+            transition: 0.7s ease-in-out;
         }
 
         .enter-btn:hover::before {
-            left: 100%;
+            left: 150%;
         }
 
+        /* ขอบเรืองแสงสไตล์ไฮเทคตอนเอาเมาส์ชี้ */
         .enter-btn:hover {
-            transform: scale(1.08) translateY(-4px);
-            box-shadow: 0 15px 45px rgba(255, 30, 60, 0.9), 
-                        inset 0 2px 10px rgba(255, 255, 255, 0.6);
+            background: linear-gradient(135deg, rgba(255, 30, 60, 0.4) 0%, rgba(200, 0, 30, 0.7) 100%);
             border-color: #ffffff;
+            transform: scale(1.08) translateY(-4px);
+            box-shadow: 0 0 30px rgba(255, 30, 60, 0.9), 
+                        0 0 60px rgba(255, 30, 60, 0.5),
+                        inset 0 0 20px rgba(255, 255, 255, 0.6);
         }
 
         .enter-btn:active {
             transform: scale(0.95);
         }
 
-        @keyframes btnPulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 30, 60, 0.6); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 30, 60, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 30, 60, 0); }
+        @keyframes cyberPulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 30, 60, 0.6), inset 0 0 15px rgba(255, 30, 60, 0.3); }
+            70% { box-shadow: 0 0 0 18px rgba(255, 30, 60, 0), inset 0 0 25px rgba(255, 30, 60, 0.6); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 30, 60, 0), inset 0 0 15px rgba(255, 30, 60, 0.3); }
         }
     </style>
 </head>
@@ -214,7 +229,6 @@
         </div>
     </header>
 
-    <!-- จัดกึ่งกลางหน้าจอแบบเด็ดขาด ปุ่มจะหล่นมาอยู่ตรงกลางพอดีเป๊ะ -->
     <div class="center-wrapper">
         <div class="hero-container">
             <div class="gothic-logo-text">MYWAY</div>
