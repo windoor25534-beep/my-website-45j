@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYWAY.com</title>
+    <title>MYWAY // WORLD CLASS DESIGN</title>
     <style>
         * {
             box-sizing: border-box;
@@ -24,7 +24,6 @@
             position: relative;
         }
 
-        /* แสงออร่าแบ็คกราวด์ระดับเทพ คุมโทนดำ-แดงเลือดนก */
         .ambient-glow {
             position: absolute;
             width: 100%;
@@ -35,7 +34,6 @@
             background: radial-gradient(circle at 50% 50%, rgba(30, 5, 8, 0.6) 0%, rgba(2, 2, 2, 0.95) 70%);
         }
 
-        /* แสงนีออนพาดผ่านด้านหลังแบบเนียนตา */
         .spotlight {
             position: absolute;
             top: 50%;
@@ -55,7 +53,6 @@
             100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.9; }
         }
 
-        /* แถบเมนูด้านบนสุด */
         header {
             width: 100%;
             padding: 20px 24px;
@@ -100,7 +97,6 @@
             transform: translateY(-2px);
         }
 
-        /* ส่วนแสดงโลโก้หลักตรงกลางหน้าเว็บ (จุดไฮไลท์ความเท่) */
         .hero-container {
             display: flex;
             flex-direction: column;
@@ -139,7 +135,6 @@
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
         }
 
-        /* ปุ่มกดเข้าสู่เว็บไซต์หลักด้านล่าง */
         .footer-action {
             width: 100%;
             padding: 30px;
@@ -174,11 +169,9 @@
 </head>
 <body>
 
-    <!-- เอฟเฟกต์แสงพื้นหลัง -->
     <div class="ambient-glow"></div>
     <div class="spotlight"></div>
 
-    <!-- ส่วนหัว -->
     <header>
         <div class="header-title">MYWAY.GAVG</div>
         <div class="nav-links">
@@ -186,15 +179,14 @@
         </div>
     </header>
 
-    <!-- โลโก้หลักตรงกลาง -->
     <div class="hero-container">
         <div class="logo-wrapper">
-            <img src="logo.png" alt="MYWAY Logo" class="main-logo">
+            <!-- เปลี่ยนตรงนี้ให้ตรงกับชื่อไฟล์รูปของคุณ เช่น logo.png หรือถ้าไฟล์ชื่ออื่นให้แก้ตรงคำว่า logo.png ครับ -->
+            <img src="logo.png" alt="MYWAY Logo" class="main-logo" onerror="this.src='https://via.placeholder.com/280x100/020202/ff1e3c?text=MYWAY';">
         </div>
         <div class="hero-subtitle">THE OFFICIAL SUPREMACY</div>
     </div>
 
-    <!-- ปุ่มกดเข้าสู่ระบบ -->
     <div class="footer-action">
         <a href="roster.html" class="enter-btn">ENTER ROSTER</a>
     </div>
