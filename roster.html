@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYWAY.GAVG // EXECUTIVE ROSTER</title>
+    <title>MYWAY.GAVG // OFFICIAL MEMBERS ROSTER</title>
     <style>
         * {
             box-sizing: border-box;
@@ -14,7 +14,7 @@
         body {
             background-color: #030203;
             color: #ffffff;
-            padding: 15px;
+            padding: 16px;
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
@@ -49,15 +49,15 @@
             background: rgba(14, 10, 12, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            padding: 14px 18px;
+            padding: 12px 18px;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
         }
         .logo-text {
             color: #ff1e3c;
             font-weight: 900;
-            font-size: 1.25rem;
-            letter-spacing: 2.5px;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
             text-shadow: 0 0 15px rgba(255, 30, 60, 0.8);
         }
         .nav-btns {
@@ -68,14 +68,14 @@
             background: rgba(20, 10, 12, 0.9);
             color: #ffd1d6;
             border: 1px solid rgba(255, 30, 60, 0.4);
-            padding: 8px 14px;
+            padding: 7px 14px;
             border-radius: 10px;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             cursor: pointer;
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             font-weight: bold;
             letter-spacing: 1px;
             transition: all 0.2s ease;
@@ -92,33 +92,43 @@
             color: #030203;
         }
 
-        /* หัวข้อหลัก */
+        /* หัวข้อหลักตรงกลาง */
         .main-title-container {
             text-align: center;
             margin: 20px 0 30px 0;
+            position: relative;
+        }
+        .main-title-container::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 2px;
+            background: #ff1e3c;
+            margin: 12px auto 0 auto;
+            box-shadow: 0 0 10px #ff1e3c;
         }
         .main-title {
             color: #ff1e3c;
             font-size: 2.3rem;
             font-weight: 900;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             text-shadow: 0 0 25px rgba(255, 30, 60, 0.7), 0 0 10px rgba(255, 30, 60, 0.4);
             margin-bottom: 4px;
         }
         .sub-title {
             color: #9c7b82;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             letter-spacing: 3px;
             text-transform: uppercase;
         }
         
-        /* หัวข้อหมวดหมู่แก๊ง ดีไซน์ไอคอนระดับเทพ */
+        /* หัวข้อหมวดหมู่ยศ */
         .section-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             color: #ff1e3c;
-            margin: 30px 0 12px 0;
+            margin: 32px 0 12px 0;
             font-size: 0.9rem;
             font-weight: bold;
             border-bottom: 1px solid rgba(255, 30, 60, 0.3);
@@ -131,12 +141,6 @@
             align-items: center;
             gap: 8px;
         }
-        .cyber-glyph {
-            color: #ff738a;
-            font-size: 0.8rem;
-            font-family: monospace;
-            text-shadow: 0 0 8px #ff1e3c;
-        }
         .count-badge {
             font-size: 0.7rem;
             color: #ffd1d6;
@@ -147,7 +151,7 @@
             box-shadow: inset 0 0 8px rgba(255, 30, 60, 0.2);
         }
 
-        /* การ์ดสมาชิกพรีเมียมธีมแดง */
+        /* รายการการ์ดสมาชิก */
         .member-list {
             display: flex;
             flex-direction: column;
@@ -177,7 +181,7 @@
             gap: 14px;
         }
         
-        /* รูปโปรไฟล์และเครื่องหมายยศไซเบอร์ */
+        /* รูปโปรไฟล์และตราสัญลักษณ์ยศลอยตัว */
         .avatar-container {
             position: relative;
             width: 52px;
@@ -203,7 +207,7 @@
             align-items: center;
             justify-content: center;
             font-size: 0.55rem;
-            color: #ff738a;
+            color: #ffd1d6;
             border: 1px solid #ff1e3c;
             box-shadow: 0 0 8px rgba(255, 30, 60, 0.9);
             z-index: 2;
@@ -252,8 +256,8 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
         .social-icon-btn svg {
-            width: 19px;
-            height: 19px;
+            width: 18px;
+            height: 18px;
             fill: #ffd1d6;
             transition: 0.2s;
         }
@@ -269,7 +273,7 @@
 
         .empty-slot {
             text-align: center;
-            padding: 20px;
+            padding: 18px;
             background: rgba(14, 10, 12, 0.5);
             border: 1px dashed rgba(255, 30, 60, 0.3);
             border-radius: 14px;
@@ -286,8 +290,8 @@
     <header>
         <div class="logo-text">Myway.gavg</div>
         <div class="nav-btns">
-            <a href="index.html" class="btn">[ SYS.HOME ]</a>
-            <a href="#" class="btn">[ SYS.ADMIN ]</a>
+            <a href="index.html" class="btn">🏠 HOME</a>
+            <a href="#" class="btn">👑 ADMIN</a>
         </div>
     </header>
 
@@ -296,56 +300,109 @@
         <div class="sub-title">THE OFFICIAL MEMBERS ROSTER</div>
     </div>
 
-    <!-- developer -->
+    <!-- 👑 LEADERS -->
     <div class="section-header">
         <div class="section-title-left">
-            <span class="cyber-glyph">&gt;&gt;</span>
-            <span>developer</span>
+            <span>👑 LEADERS</span>
         </div>
-        <span class="count-badge">[01]</span>
+        <span class="count-badge">[3]</span>
     </div>
     
     <div class="member-list">
+        <!-- สมาชิกคนที่ 1 -->
         <div class="member-card">
             <div class="member-left">
                 <div class="avatar-container">
-                    <span class="rank-insignia">❖</span>
+                    <span class="rank-insignia">👑</span>
                     <img src="https://cdn.discordapp.com/attachments/1542675599129317387/1550964147078823966/dcfd304bbad41cf055f2c9031a8d04c8.jpg?ex=6ab03f6c&is=6aaeedec&hm=eb2f8de365c39b7e10ee53512c53ee9f6f7a211f3b68d6ef202077772a9c1a86&" alt="Avatar" class="member-avatar">
                 </div>
                 <div class="member-details">
                     <div class="member-name">Artzx Dararap</div>
-                    <div class="member-role">dev</div>
+                    <div class="member-role">Legendary</div>
                 </div>
             </div>
             <a href="https://www.instagram.com/art_sevennight?stkn=MXE2Zm5mZGg1cWVvOA==" target="_blank" class="social-icon-btn" title="Instagram">
                 <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
         </div>
+
+        <!-- สมาชิกคนที่ 2 -->
+        <div class="member-card">
+            <div class="member-left">
+                <div class="avatar-container">
+                    <span class="rank-insignia">👑</span>
+                    <img src="https://via.placeholder.com/150" alt="Avatar" class="member-avatar">
+                </div>
+                <div class="member-details">
+                    <div class="member-name">KIT</div>
+                    <div class="member-role">LEADER</div>
+                </div>
+            </div>
+            <a href="https://instagram.com/yourlink" target="_blank" class="social-icon-btn" title="Instagram">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+        </div>
+
+        <!-- สมาชิกคนที่ 3 (ตัวอย่างลิงก์ Facebook) -->
+        <div class="member-card">
+            <div class="member-left">
+                <div class="avatar-container">
+                    <span class="rank-insignia">👑</span>
+                    <img src="https://via.placeholder.com/150" alt="Avatar" class="member-avatar">
+                </div>
+                <div class="member-details">
+                    <div class="member-name">14min Neverbrokeagain</div>
+                    <div class="member-role">LEADER</div>
+                </div>
+            </div>
+            <a href="https://facebook.com/yourlink" target="_blank" class="social-icon-btn" title="Facebook">
+                <svg viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.37 14.5 5 15.5 5H18V0h-3.808C10.5 0 9 1.587 9 4.615V8z"/></svg>
+            </a>
+        </div>
     </div>
 
-    <!-- developer -->
+    <!-- 🛡️ VICE LEADERS -->
     <div class="section-header">
         <div class="section-title-left">
-            <span class="cyber-glyph">&gt;&gt;</span>
-            <span>developer</span>
+            <span>🛡️ VICE LEADERS</span>
         </div>
-        <span class="count-badge">[01]</span>
+        <span class="count-badge">[2]</span>
     </div>
-    
+
     <div class="member-list">
         <div class="member-card">
             <div class="member-left">
                 <div class="avatar-container">
-                    <span class="rank-insignia">❖</span>
-                    <img src="https://cdn.discordapp.com/attachments/1542675599129317387/1550964147078823966/dcfd304bbad41cf055f2c9031a8d04c8.jpg?ex=6ab03f6c&is=6aaeedec&hm=eb2f8de365c39b7e10ee53512c53ee9f6f7a211f3b68d6ef202077772a9c1a86&" alt="Avatar" class="member-avatar">
+                    <span class="rank-insignia">⚡</span>
+                    <img src="https://via.placeholder.com/150" alt="Avatar" class="member-avatar">
                 </div>
                 <div class="member-details">
-                    <div class="member-name">Joseph 1977</div>
-                    <div class="member-role">dev</div>
+                    <div class="member-name">Jonathan</div>
+                    <div class="member-role">CO-LEADER</div>
                 </div>
             </div>
-            <a href="https://www.instagram.com/_ronin302?stkn=MXBsMnloODRxcmhpaw==" target="_blank" class="social-icon-btn" title="Instagram">
+            <a href="https://instagram.com/yourlink" target="_blank" class="social-icon-btn" title="Instagram">
                 <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
         </div>
-    
+        
+        <div class="member-card">
+            <div class="member-left">
+                <div class="avatar-container">
+                    <span class="rank-insignia">⚡</span>
+                    <img src="https://via.placeholder.com/150" alt="Avatar" class="member-avatar">
+                </div>
+                <div class="member-details">
+                    <div class="member-name">Kitty</div>
+                    <div class="member-role">CO-LEADER</div>
+                </div>
+            </div>
+            <a href="https://instagram.com/yourlink" target="_blank" class="social-icon-btn" title="Instagram">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+        </div>
+    </div>
+
+</body>
+                    </html>
+                    
