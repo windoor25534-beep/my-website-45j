@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYWAY</title>
+    <title>MYWAY // WORLD CLASS DESIGN</title>
     <style>
         * {
             box-sizing: border-box;
@@ -15,11 +15,8 @@
         body {
             background-color: #020202;
             color: #ffffff;
+            width: 100vw;
             height: 100vh;
-            height: 100dvh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             overflow: hidden;
             position: relative;
         }
@@ -40,8 +37,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 320px;
-            height: 320px;
+            width: 350px;
+            height: 350px;
             background: rgba(255, 20, 40, 0.15);
             filter: blur(90px);
             border-radius: 50%;
@@ -54,10 +51,13 @@
             100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.8; }
         }
 
-        /* ส่วนหัวเว็บไซต์ให้อยู่ด้านบนสุดแบบลอยตัว */
+        /* ส่วนหัวเว็บไซต์ (ให้อยู่มุมบนสุดแบบอิสระ) */
         header {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            padding: 18px 24px;
+            padding: 20px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -85,27 +85,28 @@
             backdrop-filter: blur(10px);
         }
 
-        /* รวมเนื้อหาทั้งหมดไว้ตรงกลางหน้าจอแบบเป๊ะๆ */
-        .main-wrapper {
+        /* บล็อกกลางหน้าจอแบบเป๊ะๆ 100% ไม่โดนบาร์มือถือดัน */
+        .center-wrapper {
             position: absolute;
-            top: 50%;
+            top: 52%;
             left: 50%;
             transform: translate(-50%, -50%);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            width: 100%;
-            padding: 0 20px;
+            width: 90%;
+            max-width: 450px;
         }
 
-        /* โลโก้กลางจอ */
+        /* โลโก้ */
         .hero-container {
-            margin-bottom: 35px; /* ระยะห่างระหว่างโลโก้กับปุ่ม */
+            margin-bottom: 30px;
+            width: 100%;
         }
 
         .gothic-logo-text {
-            font-size: clamp(3.5rem, 12vw, 6rem);
+            font-size: clamp(3.5rem, 12vw, 5.5rem);
             font-weight: 900;
             letter-spacing: 4px;
             color: #ffffff;
@@ -114,7 +115,7 @@
             text-shadow: 0 0 25px rgba(255, 255, 255, 0.6), 
                          0 0 50px rgba(255, 30, 60, 0.5);
             animation: logoFloat 4s ease-in-out infinite alternate;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         @keyframes logoFloat {
@@ -130,15 +131,17 @@
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
         }
 
-        /* ปุ่มกดที่มีแอนิเมชันหล่นลงมาจากด้านบนแบบเฟี้ยวๆ */
+        /* ปุ่มกดเอฟเฟกต์หล่นลงมาจากด้านบนเข้าสู่กลางจอ */
         .center-action {
-            z-index: 10;
+            width: 100%;
+            display: flex;
+            justify-content: center;
             animation: dropDownBtn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
 
         @keyframes dropDownBtn {
             0% {
-                transform: translateY(-100px);
+                transform: translateY(-90px);
                 opacity: 0;
             }
             100% {
@@ -152,7 +155,7 @@
             background: linear-gradient(135deg, #ff1e3c 0%, #8a0014 100%);
             color: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.4);
-            padding: 15px 45px;
+            padding: 16px 48px;
             border-radius: 16px;
             font-size: 0.85rem;
             font-weight: 900;
@@ -211,8 +214,8 @@
         </div>
     </header>
 
-    <!-- รวมกลุ่มโลโก้และปุ่มไว้ตรงกลางจอพอดิบพอดี -->
-    <div class="main-wrapper">
+    <!-- จัดกึ่งกลางหน้าจอแบบเด็ดขาด ปุ่มจะหล่นมาอยู่ตรงกลางพอดีเป๊ะ -->
+    <div class="center-wrapper">
         <div class="hero-container">
             <div class="gothic-logo-text">MYWAY</div>
             <div class="hero-subtitle">THE OFFICIAL SUPREMACY</div>
