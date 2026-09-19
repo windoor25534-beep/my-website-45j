@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYWAY // WORLD CLASS DESIGN</title>
+    <title>MYWAY</title>
     <style>
         * {
             box-sizing: border-box;
@@ -19,7 +19,6 @@
             height: 100dvh;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             align-items: center;
             overflow: hidden;
             position: relative;
@@ -41,10 +40,10 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
+            width: 320px;
+            height: 320px;
             background: rgba(255, 20, 40, 0.15);
-            filter: blur(80px);
+            filter: blur(90px);
             border-radius: 50%;
             z-index: -1;
             animation: pulseGlow 4s ease-in-out infinite alternate;
@@ -52,13 +51,13 @@
 
         @keyframes pulseGlow {
             0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.4; }
-            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+            100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.8; }
         }
 
-        /* ส่วนหัวเว็บไซต์ */
+        /* ส่วนหัวเว็บไซต์ให้อยู่ด้านบนสุดแบบลอยตัว */
         header {
             width: 100%;
-            padding: 16px 20px;
+            padding: 18px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -86,28 +85,36 @@
             backdrop-filter: blur(10px);
         }
 
-        /* ส่วนเนื้อหาหลักตรงกลาง */
-        .hero-container {
+        /* รวมเนื้อหาทั้งหมดไว้ตรงกลางหน้าจอแบบเป๊ะๆ */
+        .main-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             text-align: center;
+            width: 100%;
             padding: 0 20px;
-            flex-grow: 1;
+        }
+
+        /* โลโก้กลางจอ */
+        .hero-container {
+            margin-bottom: 35px; /* ระยะห่างระหว่างโลโก้กับปุ่ม */
         }
 
         .gothic-logo-text {
-            font-size: clamp(3.2rem, 11vw, 5.5rem);
+            font-size: clamp(3.5rem, 12vw, 6rem);
             font-weight: 900;
             letter-spacing: 4px;
             color: #ffffff;
             text-transform: uppercase;
             font-family: 'Impact', 'Arial Black', sans-serif;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 
-                         0 0 40px rgba(255, 30, 60, 0.5);
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.6), 
+                         0 0 50px rgba(255, 30, 60, 0.5);
             animation: logoFloat 4s ease-in-out infinite alternate;
-            margin-bottom: 2px;
+            margin-bottom: 5px;
         }
 
         @keyframes logoFloat {
@@ -118,25 +125,20 @@
         .hero-subtitle {
             color: #9c7b82;
             font-size: 0.65rem;
-            letter-spacing: 5px;
+            letter-spacing: 6px;
             text-transform: uppercase;
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
         }
 
-        /* ส่วนปุ่มกดตรงกลางแบบหล่นลงมาเฟี้ยวๆ */
+        /* ปุ่มกดที่มีแอนิเมชันหล่นลงมาจากด้านบนแบบเฟี้ยวๆ */
         .center-action {
-            width: 100%;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
             z-index: 10;
-            margin-bottom: auto; /* ดึงให้อยู่กึ่งกลางหน้าจอพอดี */
             animation: dropDownBtn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
 
         @keyframes dropDownBtn {
             0% {
-                transform: translateY(-80px);
+                transform: translateY(-100px);
                 opacity: 0;
             }
             100% {
@@ -150,17 +152,18 @@
             background: linear-gradient(135deg, #ff1e3c 0%, #8a0014 100%);
             color: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.4);
-            padding: 16px 48px;
+            padding: 15px 45px;
             border-radius: 16px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 900;
             letter-spacing: 4px;
             text-decoration: none;
             overflow: hidden;
+            display: inline-block;
             box-shadow: 0 10px 30px rgba(255, 30, 60, 0.6), 
                         inset 0 2px 6px rgba(255, 255, 255, 0.4);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: btnPulse 2.5s infinite 1.2s; /* ให้กระพือต่อหลังจากหล่นลงมาเสร็จ */
+            animation: btnPulse 2.5s infinite 1.2s;
         }
 
         .enter-btn::before {
@@ -208,16 +211,17 @@
         </div>
     </header>
 
-    <div class="hero-container">
-        <div class="gothic-logo-text">MYWAY</div>
-        <div class="hero-subtitle">THE OFFICIAL SUPREMACY</div>
-    </div>
+    <!-- รวมกลุ่มโลโก้และปุ่มไว้ตรงกลางจอพอดิบพอดี -->
+    <div class="main-wrapper">
+        <div class="hero-container">
+            <div class="gothic-logo-text">MYWAY</div>
+            <div class="hero-subtitle">THE OFFICIAL SUPREMACY</div>
+        </div>
 
-    <!-- ปุ่ม ENTER ROSTER จะหล่นลงมาอยู่กึ่งกลางเด่นสง่าทันทีที่เปิดเว็บ -->
-    <div class="center-action">
-        <a href="roster.html" class="enter-btn">ENTER ROSTER</a>
+        <div class="center-action">
+            <a href="roster.html" class="enter-btn">ENTER ROSTER</a>
+        </div>
     </div>
 
 </body>
 </html>
-l>
