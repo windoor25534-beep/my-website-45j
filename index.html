@@ -24,6 +24,7 @@
             position: relative;
         }
 
+        /* แสงออร่าพื้นหลัง */
         .ambient-glow {
             position: absolute;
             width: 100%;
@@ -34,6 +35,7 @@
             background: radial-gradient(circle at 50% 50%, rgba(30, 5, 8, 0.7) 0%, rgba(2, 2, 2, 0.98) 70%);
         }
 
+        /* แสงสปอตไลท์ตรงกลาง */
         .spotlight {
             position: absolute;
             top: 50%;
@@ -53,6 +55,7 @@
             100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.8; }
         }
 
+        /* ส่วนหัวเว็บไซต์ */
         header {
             width: 100%;
             padding: 20px 24px;
@@ -97,6 +100,7 @@
             transform: translateY(-2px);
         }
 
+        /* ส่วนเนื้อหาหลักตรงกลาง */
         .hero-container {
             display: flex;
             flex-direction: column;
@@ -107,7 +111,6 @@
             margin-top: -30px;
         }
 
-        /* โลโก้ตัวหนังสือสไตล์โกธิคดุดันแบบลอยตัวพรีเมียม */
         .gothic-logo-text {
             font-size: clamp(3.5rem, 12vw, 6rem);
             font-weight: 900;
@@ -136,6 +139,7 @@
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
         }
 
+        /* ส่วนปุ่มกดเข้าสู่เว็บไซต์ด้านล่าง */
         .footer-action {
             width: 100%;
             padding: 30px;
@@ -145,34 +149,64 @@
         }
 
         .enter-btn {
-            background: linear-gradient(135deg, #ff1e3c, #b3001b);
+            position: relative;
+            background: linear-gradient(135deg, #ff1e3c 0%, #8a0014 100%);
             color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 14px 42px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 16px 48px;
             border-radius: 16px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 900;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-decoration: none;
-            box-shadow: 0 10px 30px rgba(255, 30, 60, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(255, 30, 60, 0.6), 
+                        inset 0 2px 6px rgba(255, 255, 255, 0.4);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: btnPulse 2.5s infinite;
+        }
+
+        /* เอฟเฟกต์แสงวิ่งผ่านปุ่ม */
+        .enter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .enter-btn:hover::before {
+            left: 100%;
         }
 
         .enter-btn:hover {
-            transform: scale(1.05) translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 30, 60, 0.8), inset 0 2px 8px rgba(255, 255, 255, 0.5);
+            transform: scale(1.08) translateY(-4px);
+            box-shadow: 0 15px 45px rgba(255, 30, 60, 0.9), 
+                        inset 0 2px 10px rgba(255, 255, 255, 0.6);
+            border-color: #ffffff;
         }
 
         .enter-btn:active {
-            transform: scale(0.96);
+            transform: scale(0.95);
+        }
+
+        @keyframes btnPulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 30, 60, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 30, 60, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 30, 60, 0); }
         }
     </style>
 </head>
 <body>
 
+    <!-- แสงฉากหลัง -->
     <div class="ambient-glow"></div>
     <div class="spotlight"></div>
 
+    <!-- แถบด้านบน -->
     <header>
         <div class="header-title">MYWAY.GAVG</div>
         <div class="nav-links">
@@ -180,12 +214,13 @@
         </div>
     </header>
 
+    <!-- โลโก้และข้อความกลางจอ -->
     <div class="hero-container">
-        <!-- ใช้ฟอนต์และเอฟเฟกต์เรืองแสงระดับโลกทดแทนรูปภาพที่หลุด -->
         <div class="gothic-logo-text">MYWAY</div>
         <div class="hero-subtitle">THE OFFICIAL SUPREMACY</div>
     </div>
 
+    <!-- ปุ่มกดเข้าสู่เว็บ -->
     <div class="footer-action">
         <a href="roster.html" class="enter-btn">ENTER ROSTER</a>
     </div>
