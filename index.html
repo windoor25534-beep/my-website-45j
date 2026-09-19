@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYWAY.com</title>
+    <title>MYWAY // WORLD CLASS DESIGN</title>
     <style>
         * {
             box-sizing: border-box;
@@ -16,7 +16,7 @@
             background-color: #020202;
             color: #ffffff;
             height: 100vh;
-            height: 100dvh; /* ป้องกันปัญหาจอมือถือโดนแถบบราวน์เซอร์บัง */
+            height: 100dvh;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -86,7 +86,7 @@
             backdrop-filter: blur(10px);
         }
 
-        /* ส่วนเนื้อหาหลักตรงกลาง (จัดให้กระชับ ไม่กินพื้นที่) */
+        /* ส่วนเนื้อหาหลักตรงกลาง */
         .hero-container {
             display: flex;
             flex-direction: column;
@@ -123,13 +123,26 @@
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
         }
 
-        /* ส่วนปุ่มกดด้านล่าง ดึงให้อยู่ในหน้าจอพอดี */
-        .footer-action {
+        /* ส่วนปุ่มกดตรงกลางแบบหล่นลงมาเฟี้ยวๆ */
+        .center-action {
             width: 100%;
-            padding: 20px 20px 35px 20px;
+            padding: 20px;
             display: flex;
             justify-content: center;
             z-index: 10;
+            margin-bottom: auto; /* ดึงให้อยู่กึ่งกลางหน้าจอพอดี */
+            animation: dropDownBtn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes dropDownBtn {
+            0% {
+                transform: translateY(-80px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .enter-btn {
@@ -137,17 +150,17 @@
             background: linear-gradient(135deg, #ff1e3c 0%, #8a0014 100%);
             color: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.4);
-            padding: 14px 40px;
-            border-radius: 14px;
-            font-size: 0.85rem;
+            padding: 16px 48px;
+            border-radius: 16px;
+            font-size: 0.9rem;
             font-weight: 900;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-decoration: none;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(255, 30, 60, 0.6), 
-                        inset 0 2px 5px rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(255, 30, 60, 0.6), 
+                        inset 0 2px 6px rgba(255, 255, 255, 0.4);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: btnPulse 2.5s infinite;
+            animation: btnPulse 2.5s infinite 1.2s; /* ให้กระพือต่อหลังจากหล่นลงมาเสร็จ */
         }
 
         .enter-btn::before {
@@ -165,9 +178,20 @@
             left: 100%;
         }
 
+        .enter-btn:hover {
+            transform: scale(1.08) translateY(-4px);
+            box-shadow: 0 15px 45px rgba(255, 30, 60, 0.9), 
+                        inset 0 2px 10px rgba(255, 255, 255, 0.6);
+            border-color: #ffffff;
+        }
+
+        .enter-btn:active {
+            transform: scale(0.95);
+        }
+
         @keyframes btnPulse {
             0% { box-shadow: 0 0 0 0 rgba(255, 30, 60, 0.6); }
-            70% { box-shadow: 0 0 0 12px rgba(255, 30, 60, 0); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 30, 60, 0); }
             100% { box-shadow: 0 0 0 0 rgba(255, 30, 60, 0); }
         }
     </style>
@@ -189,10 +213,11 @@
         <div class="hero-subtitle">THE OFFICIAL SUPREMACY</div>
     </div>
 
-    <!-- ปุ่ม ENTER ROSTER จะเด้งขึ้นมาโชว์เด่นชัดบนหน้าจอมือถือทันที -->
-    <div class="footer-action">
+    <!-- ปุ่ม ENTER ROSTER จะหล่นลงมาอยู่กึ่งกลางเด่นสง่าทันทีที่เปิดเว็บ -->
+    <div class="center-action">
         <a href="roster.html" class="enter-btn">ENTER ROSTER</a>
     </div>
 
 </body>
 </html>
+l>
